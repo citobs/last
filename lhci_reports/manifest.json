@@ -1,0 +1,38 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_50_52-report.html",
+    "jsonPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_50_52-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_51_06-report.html",
+    "jsonPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_51_06-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_51_19-report.html",
+    "jsonPath": "C:\\erf\\lighthouse-cra\\lhci_reports\\_-2024_08_01_14_51_19-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 0.92
+    }
+  }
+]
