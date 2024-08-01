@@ -21,7 +21,7 @@ jobs:
         run: |
           npm run build
 
-      - name: Run Lighthouse CI
+      - name: Run Lighthouse CI --port 443
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.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 }}
         run: |
