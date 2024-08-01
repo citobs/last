@@ -21,9 +21,9 @@ jobs:
         run: |
           npm run build
 
-      - name: Run Lighthouse CI --port 443
+      - name: Run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.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 }}
         run: |
-          npm install -g @lhci/cli
+          npm install -g @lhci/cli --port 443
           lhci autorun || echo "Fail to Run Lighthouse CI!"
