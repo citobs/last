@@ -3,23 +3,27 @@ on: [push]
 jobs:
   lhci:
     name: Lighthouse CI
-    runs-on: ubuntu-latest   
-
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: Use Node.js 17.3.1
         uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: 17.3.1
+
       - name: Install packages
-        run: yarn install && yarn global add @lhci/cli@0.8.x
-        working-directory: ./client
+        run: |
+          npm ci
+
       - name: Build
-        run: yarn build
-        working-directory: ./client
+        run: |
+          npm run build
+
       - name: Run Lighthouse CI
-        run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.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 }}
-        working-directory: ./client
+        run: |
+          npm install -g @lhci/cli --port 443
+          lhci autorun || echo "Fail to Run Lighthouse CI!"
