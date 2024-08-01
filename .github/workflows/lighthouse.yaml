@@ -16,12 +16,12 @@ jobs:
           node-version: '16'
       - name: Install packages
         run: yarn install && yarn global add @lhci/cli@0.8.x
-        working-directory: ${{ env.working-directory }}
+        working-directory: ./client
       - name: Build
         run: yarn build
-        working-directory: ${{ env.working-directory }}
+        working-directory: ./client
       - name: Run Lighthouse CI
         run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.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 }}
-        working-directory: ${{ env.working-directory }}
+        working-directory: ./client
