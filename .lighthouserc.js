@@ -1,18 +1,28 @@
 module.exports = {
-    ci: {
-      collect: {
-        staticDistDir: "./build",
-        //startServerCommand: "npm run start", // 서버를 키는 명령어를 통해서도 실행 가능
-        url: ["https://www.amoremall.com:443/kr/ko/display/main"],       
-        numberOfRuns: 5,
+  ci: {
+    collect: {
+      startServerCommand: 'npm run start',
+      startServerReadyPattern: 'ready on',
+      url: ['http://localhost:3000'],
+      numberOfRuns: 3,
+      settings: {
+        preset: 'desktop',
       },
-      upload: {
-        target: "temporary-public-storage",
-      },
-      server:{
-        port:443
-      }
     },
-  };
+    upload: {
+      target: 'filesystem',
+      outputDir: './lhci_reports',
+      reportFilenamePattern: '%%PATHNAME%%-%%DATETIME%%-report.%%EXTENSION%%',
+    },
+    assert: {
+      assertions: {
+        'categories:performance': ['warn', { minScore: 0.9 }],
 
-//url수정
+        'categories:performance': ['error', { minScore: 0.8 }],
+        'categories:accessibility': ['error', { minScore: 0.9 }],
+        'categories:best-practices': ['error', { minScore: 0.9 }],
+        'categories:seo': ['error', { minScore: 0.9 }],
+      },
+    },
+  },
+};
